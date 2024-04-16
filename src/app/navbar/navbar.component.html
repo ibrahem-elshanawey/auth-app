@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg  bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" routerLink="/home" >Home</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div ngbDropdown *ngIf="isLoggedIn()" class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            {{ getUsername() }}
+          </button>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" routerLink="/profile">Profile</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+            <a class="dropdown-item" routerLink="/reset-password"> changepassword</a>
+          </div>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" *ngIf="!isLoggedIn()">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" *ngIf="!isLoggedIn()">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

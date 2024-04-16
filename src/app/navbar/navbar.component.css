@@ -1,0 +1,14 @@
+.dropdown-menu a {
+  cursor: pointer;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-menu {
+  margin-top: 0;
+}
+.nav-item .nav-link {
+  color: #fff;
+}
